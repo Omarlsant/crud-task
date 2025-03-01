@@ -1,0 +1,52 @@
+# General Python
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+*.egg
+build/
+dist/
+.cache/
+.pytest_cache/
+.mypy_cache/
+.tox/
+.venv/    # Entorno virtual.
+venv/     #  Otra posible carpeta para entornos virtuales
+env/      #  Otra convención de nombre
+ENV/
+
+# Django specific
+db.sqlite3    # Archivo de la base de datos SQLite.
+db.sqlite3-*  # Backups de la BD sqlite
+media/       # Archivos multimedia (si los subes con SQLite, para despliegue Heroku etc. no).
+static/      # Archivos estáticos generados (normalmente los sirves con un servidor web).
+*.log         # Archivos de log (en general).
+secrets.json   # Archivo de secretos (si usas uno).
+.env          # Archivo de entorno (MUY IMPORTANTE, no subas esto!).
+
+# Editor/IDE specific
+.idea/         # JetBrains IDEs (PyCharm, IntelliJ, etc.)
+*.iws
+*.iml
+*.ipr
+.vscode/       # VS Code
+.DS_Store      # macOS-specific
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Compiled code /  packaging
+*.so          # Shared object files
+
+# Security/Credentials (SIEMPRE ignora estos!)
+*.key
+*.pem
+*.cer
+credentials.json
+credentials.ini
+id_rsa
+
+# Unit test reports and coverage
+htmlcov/      # Carpeta generada por pytest y coverage.
+.coverage*     # Carpeta con reportes.
+**/coverage.xml  # Formato XML, mejor si añades este tipo específico de path.
