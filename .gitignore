@@ -14,6 +14,7 @@ dist/
 venv/
 env/    
 ENV/
+uv.lock
 
 # Django specific
 db.sqlite3    
