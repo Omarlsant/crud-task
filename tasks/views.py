@@ -5,4 +5,4 @@ from .models import Task
 
 class TaskView(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
-    queryset = Task.objects.all()
+    queryset = Task.objects.order_by('-id')

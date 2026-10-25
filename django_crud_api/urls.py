@@ -15,9 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.http import JsonResponse
+from django.urls import include, path, reverse
+
+
+def api_root(request):
+    return JsonResponse({
+        'message': 'API de tareas',
+        'api': request.build_absolute_uri(reverse('tasks-list')),
+        'docs': request.build_absolute_uri('/tasks/docs/'),
+        'admin': request.build_absolute_uri('/admin/'),
+    })
 
 urlpatterns = [
+    path('', api_root, name='api-root'),
     path('admin/', admin.site.urls),
-    path('tasks/', include('tasks.urls'))
+    path('tasks/', include('tasks.urls')),
 ]
